@@ -1,0 +1,5 @@
+<!-- Provisional development monogram, not the approved NUBIA logo. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="4" fill="#11100D"/>
+  <path d="M15 49V15h6l22 27V15h6v34h-6L21 22v27z" fill="#C49A45"/>
+</svg>
