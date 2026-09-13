@@ -4,11 +4,19 @@ import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const manifest = JSON.parse(readFileSync(resolve(root, "src/content/assets.json"), "utf8"));
+const storefront = JSON.parse(readFileSync(resolve(root, "src/content/storefront.json"), "utf8"));
 const sourceRoot = process.env.NUBIA_ASSET_SOURCE_ROOT || manifest.sourceRootHint;
 const production = process.argv.includes("--production");
 const ids = new Set();
 const errors = [];
 const blockers = [];
+
+if (storefront.status !== "approved") blockers.push(`storefront-commercial-content: ${storefront.status}`);
+const commercialProducts = [storefront.primaryProduct, ...storefront.relatedProducts.items];
+for (const item of commercialProducts) {
+  if (!Number.isInteger(item.priceMinor) || item.priceMinor < 0) errors.push(`Invalid prototype priceMinor: ${item.id}`);
+  if (!item.currency) errors.push(`Missing prototype currency: ${item.id}`);
+}
 
 for (const mark of Object.values(manifest.marks)) {
   if (ids.has(mark.id)) errors.push(`Duplicate ID: ${mark.id}`);

@@ -4,7 +4,7 @@ export const navigation = [
   { label: "Learn", href: "/learn", implemented: true },
   { label: "Explore", href: "/explore", implemented: true },
   { label: "Pieces", href: "/pieces", implemented: true },
-  { label: "Shop", href: "/shop", implemented: false },
+  { label: "Shop", href: "/shop", implemented: true },
 ] as const;
 
 export const activeNavigation = navigation.filter((item) => item.implemented);

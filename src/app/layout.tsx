@@ -6,6 +6,7 @@ import "./globals.css";
 import { brand } from "@/content/brand";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { CartProvider } from "@/components/cart/cart-provider";
 
 export const metadata: Metadata = {
   title: { default: brand.name, template: `%s | ${brand.name}` },
@@ -18,10 +19,12 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html lang="en">
       <body>
-        <a className="skip-link" href="#main-content">Skip to content</a>
-        <SiteHeader />
-        <main id="main-content" tabIndex={-1}>{children}</main>
-        <SiteFooter />
+        <CartProvider>
+          <a className="skip-link" href="#main-content">Skip to content</a>
+          <SiteHeader />
+          <main id="main-content" tabIndex={-1}>{children}</main>
+          <SiteFooter />
+        </CartProvider>
       </body>
     </html>
   );

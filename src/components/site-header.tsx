@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { activeNavigation } from "@/content/navigation";
 import { Brand } from "./brand";
 import { Container } from "./ui/layout";
+import { CartControl } from "./cart/cart-control";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -42,11 +43,6 @@ export function SiteHeader() {
     }}>
       <Container className="site-header__inner">
         <Brand />
-        <button ref={toggle} type="button" className="menu-toggle" aria-expanded={open}
-          aria-controls="primary-navigation" onClick={() => setOpen(!open)}>
-          {open ? "Close" : "Menu"}
-          <span aria-hidden="true">{open ? "−" : "+"}</span>
-        </button>
         <nav id="primary-navigation" className="primary-navigation" data-open={open} aria-label="Primary">
           <ul>
             {activeNavigation.map((item) => (
@@ -57,6 +53,14 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
+        <div className="site-header__actions">
+          <CartControl />
+          <button ref={toggle} type="button" className="menu-toggle" aria-expanded={open}
+            aria-controls="primary-navigation" onClick={() => setOpen(!open)}>
+            {open ? "Close" : "Menu"}
+            <span aria-hidden="true">{open ? "−" : "+"}</span>
+          </button>
+        </div>
       </Container>
     </header>
   );

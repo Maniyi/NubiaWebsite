@@ -1,0 +1,105 @@
+{
+  "status": "prototype",
+  "notice": "Prototype storefront — pricing and product details are not final.",
+  "breadcrumb": [
+    { "label": "Home", "href": "/" },
+    { "label": "Shop", "href": "/shop" },
+    { "label": "NUBIA: African Chess", "href": "/shop" }
+  ],
+  "primaryProduct": {
+    "status": "prototype",
+    "id": "nubia-african-chess",
+    "name": "NUBIA: African Chess",
+    "eyebrow": "Premium Edition",
+    "tagline": "Two Empires. Five Resource Mines. One Victory.",
+    "description": "An African-inspired strategy board game played across a 100-square world of LAND and SEA. Guide your empire through five regions and pursue a peasant-led resource victory.",
+    "priceMinor": 8999,
+    "currency": "USD",
+    "defaultEditionId": "premium-edition",
+    "defaultQuantity": 1,
+    "maximumQuantity": 10,
+    "editions": [
+      { "status": "prototype", "id": "premium-edition", "label": "Premium Edition" },
+      { "status": "prototype", "id": "standard-edition", "label": "Standard Edition" }
+    ],
+    "rating": {
+      "status": "prototype",
+      "label": "Reviews will be added after launch"
+    },
+    "gallery": [
+      { "id": "hero", "label": "Final NUBIA product photography", "description": "Board, pieces and packaging" },
+      { "id": "overhead", "label": "Overhead board view", "description": "Final overhead board photography" },
+      { "id": "pieces", "label": "Piece collection", "description": "Final piece collection photography" },
+      { "id": "packaging", "label": "Packaging", "description": "Final packaging photography" },
+      { "id": "detail", "label": "Board detail", "description": "Final board-detail photography" },
+      { "id": "video", "label": "Product video", "description": "Final product video preview" }
+    ],
+    "reassurance": [
+      { "label": "Prototype cart", "detail": "Saved on this device" },
+      { "label": "Payment", "detail": "Provider not connected" },
+      { "label": "Availability", "detail": "To be confirmed" }
+    ]
+  },
+  "benefits": [
+    { "marker": "01", "title": "Unique Gameplay", "description": "A 100-square board with LAND, SEA and a resource-driven objective." },
+    { "marker": "02", "title": "African Heritage", "description": "Regions and piece identities draw on African settings and roles." },
+    { "marker": "03", "title": "Strategic Depth", "description": "Eight piece types bring distinct movement, capture and abilities." },
+    { "marker": "04", "title": "Premium Presentation", "description": "A museum-like visual direction frames the physical game." },
+    { "marker": "05", "title": "Designed to Learn and Master", "description": "Guides introduce the objective, terrain and distinct piece roles." }
+  ],
+  "included": {
+    "status": "prototype",
+    "notice": "Prototype contents — final inclusions and quantities are to be confirmed.",
+    "items": [
+      { "id": "game-board", "title": "Game Board", "imageLabel": "Final game-board photography", "description": "Final board format and details to be confirmed." },
+      { "id": "piece-collection", "title": "Piece Collection", "imageLabel": "Final piece collection photography", "description": "Final physical piece collection to be confirmed." },
+      { "id": "rulebook", "title": "Rulebook and Strategy Guide", "imageLabel": "Final rulebook photography", "description": "Final printed guidance format to be confirmed." },
+      { "id": "piece-storage", "title": "Piece Storage", "imageLabel": "Final storage photography", "description": "Final storage presentation to be confirmed." },
+      { "id": "resource-tokens", "title": "Resource Tokens", "imageLabel": "Final resource-token photography", "description": "Final physical resource treatment to be confirmed." },
+      { "id": "edition-material", "title": "Certificate or Edition Material", "imageLabel": "Final edition-material photography", "description": "Final edition material to be confirmed." }
+    ]
+  },
+  "specifications": {
+    "status": "prototype",
+    "title": "Specifications",
+    "rows": [
+      { "label": "Players", "value": "To be confirmed" },
+      { "label": "Ages", "value": "To be confirmed" },
+      { "label": "Play Time", "value": "To be confirmed" },
+      { "label": "Game Type", "value": "Strategy board game" },
+      { "label": "Dimensions", "value": "To be confirmed" }
+    ]
+  },
+  "whyNubia": {
+    "title": "Why NUBIA?",
+    "points": [
+      "African-inspired strategy world",
+      "Eight distinct piece identities",
+      "Five board regions",
+      "LAND and SEA terrain concepts",
+      "Resource-driven victory objective"
+    ]
+  },
+  "testimonial": {
+    "status": "prototype",
+    "label": "Customer testimonial",
+    "description": "Verified customer feedback will appear here after launch."
+  },
+  "relatedProducts": {
+    "status": "prototype",
+    "title": "You May Also Like",
+    "notice": "Prototype product concepts and prices",
+    "items": [
+      { "id": "piece-upgrade-set", "name": "NUBIA Piece Upgrade Set", "imageLabel": "Final upgrade-set photography", "priceMinor": 3999, "currency": "USD" },
+      { "id": "leather-board-mat", "name": "NUBIA Leather Board Mat", "imageLabel": "Final board-mat photography", "priceMinor": 2999, "currency": "USD" },
+      { "id": "deluxe-storage-box", "name": "NUBIA Deluxe Storage Box", "imageLabel": "Final storage-box photography", "priceMinor": 4499, "currency": "USD" },
+      { "id": "t-shirt", "name": "NUBIA T-Shirt", "imageLabel": "Final apparel photography", "priceMinor": 2499, "currency": "USD" }
+    ]
+  },
+  "services": [
+    { "marker": "S", "title": "Shipping", "description": "Shipping details to be confirmed" },
+    { "marker": "R", "title": "Returns", "description": "Returns policy to be confirmed" },
+    { "marker": "P", "title": "Secure Payments", "description": "Payment provider to be integrated" },
+    { "marker": "?", "title": "Support", "description": "Support details to be confirmed" }
+  ]
+}
