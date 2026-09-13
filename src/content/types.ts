@@ -9,7 +9,27 @@ export type Piece = {
   name: string;
   assetId: string;
   source: SourceReference;
-  // Detailed movement, capture and special-power content is deferred to M3/M5.
+};
+
+export type PieceRuleSummary = {
+  summary: string;
+  source: SourceReference;
+};
+
+export type PieceProfile = Piece & {
+  aliases: readonly string[];
+  role: string;
+  description: string;
+  alt: string;
+  movement: PieceRuleSummary;
+  capture: PieceRuleSummary;
+  specialAbility?: PieceRuleSummary & { name: string };
+  manualPages: readonly number[];
+  hasMovementDiagram: boolean;
+  hasCaptureDiagram: boolean;
+  hasSpecialAbilityDiagram: boolean;
+  clarificationStatus: "verified-summary" | "qualified-summary";
+  clarification?: string;
 };
 
 export type BoardRegion = {

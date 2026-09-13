@@ -3,7 +3,7 @@ export const navigation = [
   { label: "Home", href: "/", implemented: true },
   { label: "Learn", href: "/learn", implemented: true },
   { label: "Explore", href: "/explore", implemented: true },
-  { label: "Pieces", href: "/pieces", implemented: false },
+  { label: "Pieces", href: "/pieces", implemented: true },
   { label: "Shop", href: "/shop", implemented: false },
 ] as const;
 
