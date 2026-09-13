@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useCart } from "@/components/cart/cart-provider";
 import { VisualPlaceholder } from "@/components/learn/visual-placeholder";
@@ -16,7 +17,8 @@ export function ShopStorefront() {
   const [selectedGalleryId, setSelectedGalleryId] = useState(product.gallery[0].id);
   const [selectedEditionId, setSelectedEditionId] = useState(product.defaultEditionId);
   const [quantity, setQuantity] = useState(product.defaultQuantity);
-  const { addItem, openCart } = useCart();
+  const { addItem, setItem, openCart } = useCart();
+  const router = useRouter();
   const selectedGallery = product.gallery.find((item) => item.id === selectedGalleryId) ?? product.gallery[0];
   const selectedEdition = product.editions.find((edition) => edition.id === selectedEditionId) ?? product.editions[0];
 
@@ -92,8 +94,8 @@ export function ShopStorefront() {
             </div>
 
             <div className="purchase-actions">
-              <button type="button" className="purchase-button purchase-button--primary" onClick={() => addItem(cartLine())}><CartIcon /> Add to Cart</button>
-              <button type="button" className="purchase-button purchase-button--secondary" onClick={(event) => { addItem(cartLine()); openCart(event.currentTarget); }}>Buy It Now</button>
+              <button type="button" className="purchase-button purchase-button--primary" onClick={(event) => { addItem(cartLine()); openCart(event.currentTarget); }}><CartIcon /> Add to Cart</button>
+              <button type="button" className="purchase-button purchase-button--secondary" onClick={() => { setItem(cartLine()); router.push("/checkout"); }}>Buy It Now</button>
             </div>
 
             <dl className="purchase-reassurance">{product.reassurance.map((item) => <div key={item.label}><dt>{item.label}</dt><dd>{item.detail}</dd></div>)}</dl>

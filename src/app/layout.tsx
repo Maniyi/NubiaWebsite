@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import "@fontsource-variable/cinzel";
 import "@fontsource-variable/inter";
 import "./globals.css";
+import "./commerce.css";
 import { brand } from "@/content/brand";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";

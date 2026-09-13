@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { formatPrice, storefront } from "@/content/storefront";
 import { useCart } from "./cart-provider";
 
@@ -83,7 +84,8 @@ export function CartDrawer() {
           <span>Prototype subtotal</span>
           <strong>{formatPrice(subtotal, currency)}</strong>
         </div>
-        <p className="cart-drawer__checkout-note">Checkout integration will be added after payment and order requirements are approved.</p>
+        <Link className="button button--primary cart-drawer__view-cart" href="/cart" onClick={closeCart}>View Cart</Link>
+        <p className="cart-drawer__checkout-note">Shipping, taxes, payment and order processing are not connected in this frontend prototype.</p>
       </aside>
     </div>
   );

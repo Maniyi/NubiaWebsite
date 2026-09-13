@@ -18,8 +18,11 @@ export type CartLine = {
 type CartContextValue = {
   lines: CartLine[];
   itemCount: number;
+  hydrated: boolean;
   isOpen: boolean;
   addItem: (item: CartLine) => void;
+  setItem: (item: CartLine) => void;
+  updateQuantity: (productId: string, editionId: string, quantity: number) => void;
   removeItem: (productId: string, editionId: string) => void;
   openCart: (trigger?: HTMLElement | null) => void;
   closeCart: () => void;
@@ -76,6 +79,26 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setAnnouncement(`${item.quantity} ${item.editionLabel} ${item.productName} added to the prototype cart.`);
   }
 
+  function setItem(item: CartLine) {
+    setLines((current) => {
+      const quantity = Math.min(10, Math.max(1, item.quantity));
+      const matchIndex = current.findIndex((line) => line.productId === item.productId && line.editionId === item.editionId);
+      if (matchIndex === -1) return [...current, { ...item, quantity }];
+      return current.map((line, index) => index === matchIndex ? { ...item, quantity } : line);
+    });
+    setAnnouncement(`${item.editionLabel} ${item.productName} updated in the prototype cart.`);
+  }
+
+  function updateQuantity(productId: string, editionId: string, quantity: number) {
+    const safeQuantity = Math.min(10, Math.max(1, quantity));
+    setLines((current) => current.map((line) =>
+      line.productId === productId && line.editionId === editionId
+        ? { ...line, quantity: safeQuantity }
+        : line
+    ));
+    setAnnouncement(`Prototype cart quantity updated to ${safeQuantity}.`);
+  }
+
   function removeItem(productId: string, editionId: string) {
     setLines((current) => current.filter((line) => line.productId !== productId || line.editionId !== editionId));
     setAnnouncement("Item removed from the prototype cart.");
@@ -94,8 +117,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const value = {
     lines,
     itemCount: lines.reduce((total, line) => total + line.quantity, 0),
+    hydrated,
     isOpen,
     addItem,
+    setItem,
+    updateQuantity,
     removeItem,
     openCart,
     closeCart,

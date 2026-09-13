@@ -37,6 +37,17 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  if (pathname === "/checkout") {
+    return (
+      <header className="checkout-header">
+        <Container className="checkout-header__inner">
+          <Brand />
+          <Link href="/cart" className="checkout-header__back">← Back to cart</Link>
+        </Container>
+      </header>
+    );
+  }
+
   return (
     <header className="site-header" ref={header} onBlur={(event) => {
       if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);

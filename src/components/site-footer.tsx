@@ -1,9 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { activeNavigation } from "@/content/navigation";
 import { Brand } from "./brand";
 import { Container } from "./ui/layout";
 
 export function SiteFooter() {
+  const pathname = usePathname();
+  if (pathname === "/checkout") return null;
+
   return (
     <footer className="site-footer">
       <Container className="site-footer__inner">
