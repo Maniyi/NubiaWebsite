@@ -74,7 +74,7 @@ img, video { height: auto; }
 .primary-navigation[data-open="true"] { display: block; }
 nav ul { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; gap: var(--space-6); }
 .primary-navigation ul { flex-direction: column; gap: var(--space-2); }
-nav a { display: inline-flex; align-items: center; min-height: var(--target-size); color: var(--text-light); font-size: var(--text-small); text-decoration: none; }
+nav a { display: inline-flex; align-items: center; min-width: var(--target-size); min-height: var(--target-size); color: var(--text-light); font-size: var(--text-small); text-decoration: none; }
 .primary-navigation a { text-transform: uppercase; letter-spacing: var(--tracking-display); border-bottom: 1px solid transparent; }
 .primary-navigation a[aria-current="page"] { color: var(--color-nubian-gold); border-bottom-color: var(--color-nubian-gold); }
 nav a:hover { color: var(--color-nubian-gold); }

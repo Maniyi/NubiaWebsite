@@ -1,16 +1,24 @@
-import { Container, Section } from "@/components/ui/layout";
+import type { Metadata } from "next";
+import { HomeHero, CoreFacts } from "@/components/home/hero";
+import { HomeObjective } from "@/components/home/objective";
+import { HomeWorld } from "@/components/home/world";
+import { HomePieces } from "@/components/home/pieces";
+import { HomeDiscovery } from "@/components/home/discovery";
+import "./home.css";
 
-// Milestone 1 shell only. The homepage begins in Milestone 2.
-export default function FoundationPage() {
+export const metadata: Metadata = {
+  description: "Discover NUBIA: African Chess, its resource-mine objective, five board regions and eight piece types.",
+};
+
+export default function HomePage() {
   return (
-    <Section aria-labelledby="foundation-title">
-      <Container>
-        <div className="prose">
-          <p className="eyebrow">Development preview</p>
-          <h1 id="foundation-title">NUBIA: African Chess</h1>
-          <p className="text-muted">The site foundation is in place. Page content will follow.</p>
-        </div>
-      </Container>
-    </Section>
+    <>
+      <HomeHero />
+      <CoreFacts />
+      <HomeObjective />
+      <HomeWorld />
+      <HomePieces />
+      <HomeDiscovery />
+    </>
   );
 }

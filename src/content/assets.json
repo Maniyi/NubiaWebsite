@@ -31,38 +31,65 @@
     {
       "id": "reference-cocoa-exporting-commodities",
       "source": "Images/Cocoa-Exporting-commodities.webp",
-      "width": 1024,
-      "height": 576,
-      "bytes": 93148,
+      "width": 640,
+      "height": 360,
+      "bytes": 50734,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "reference",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production.",
+      "sourceWidth": 1024,
+      "sourceHeight": 576,
+      "sourceBytes": 93148,
+      "sourceSha256": "df17f17c1b7895ef464f47718119a2e3d2db8c1bbf0424a0412d8b03057e6c9f",
+      "src": "/assets/regions/temporary-market-cocoa.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "reference-footer-image",
       "source": "Images/Footer_image.png",
-      "width": 1122,
-      "height": 1402,
-      "bytes": 2211781,
+      "width": 640,
+      "height": 800,
+      "bytes": 98196,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "reference",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production.",
+      "sourceWidth": 1122,
+      "sourceHeight": 1402,
+      "sourceBytes": 2211781,
+      "sourceSha256": "16e56d6bf97966e287f2fce120eaf74e3f22a2318c9c98649060e438cdc0cbff",
+      "src": "/assets/regions/temporary-royal-portrait.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "reference-gold-mine",
       "source": "Images/Gold Mine.jpeg",
-      "width": 764,
-      "height": 401,
-      "bytes": 48784,
+      "width": 640,
+      "height": 336,
+      "bytes": 51062,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "reference",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production.",
+      "sourceWidth": 764,
+      "sourceHeight": 401,
+      "sourceBytes": 48784,
+      "sourceSha256": "ef9bb04b2c828b10469523ee4a8de4d765eeb67764ad09635b8d271c236b2085",
+      "src": "/assets/regions/temporary-outskirts-gold.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "reference-board-icon",
@@ -81,24 +108,42 @@
       "source": "Images/board_image.jpeg",
       "width": 554,
       "height": 554,
-      "bytes": 41073,
+      "bytes": 50174,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "hero-placeholder",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production. Conventional chess, NOT accurate NUBIA artwork. Hero only; never use for instructional diagrams, rules, coordinates, terrain or resource placement. Preserve aspect ratio."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production. Conventional chess, NOT accurate NUBIA artwork. Hero only; never use for instructional diagrams, rules, coordinates, terrain or resource placement. Preserve aspect ratio.",
+      "sourceWidth": 554,
+      "sourceHeight": 554,
+      "sourceBytes": 41073,
+      "sourceSha256": "c38b8762c85063586624e6d899f8331a27d45801f9344a63daf228c687978d16",
+      "src": "/assets/board/temporary-hero-chess-board.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "reference-border",
       "source": "Images/border.jpeg",
-      "width": 747,
-      "height": 410,
-      "bytes": 33636,
+      "width": 640,
+      "height": 351,
+      "bytes": 35202,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "reference",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production. Waterfall/region photography, not UI border trim."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production. Waterfall/region photography, not UI border trim.",
+      "sourceWidth": 747,
+      "sourceHeight": 410,
+      "sourceBytes": 33636,
+      "sourceSha256": "e123ec0efb04648dddb3a9e205154cf4b341fe36326db79c531b2285f6cfbcb4",
+      "src": "/assets/regions/temporary-border-waterfall.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "reference-border1",
@@ -189,12 +234,21 @@
       "source": "Images/man-made_wonder.jpg",
       "width": 640,
       "height": 426,
-      "bytes": 383301,
+      "bytes": 48432,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "reference",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production.",
+      "sourceWidth": 640,
+      "sourceHeight": 426,
+      "sourceBytes": 383301,
+      "sourceSha256": "ef18da1bfa5ba04439544a4c2930b1812613ad26dd66a389b838105cb22db2f1",
+      "src": "/assets/regions/temporary-town-center-architecture.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "reference-oil",
@@ -225,12 +279,21 @@
       "source": "Images/parchment_background.jpeg",
       "width": 610,
       "height": 501,
-      "bytes": 42275,
+      "bytes": 53238,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "reference",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production.",
+      "sourceWidth": 610,
+      "sourceHeight": 501,
+      "sourceBytes": 42275,
+      "sourceSha256": "8af89dbcdd488035ab7e4b51223981d3e3cc6982c871870d43698838c4bd2d42",
+      "src": "/assets/backgrounds/temporary-parchment.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "reference-parchment-background1",
@@ -295,98 +358,170 @@
     {
       "id": "piece-south-african-advisor",
       "source": "Pieces_Asset/Advisor.png",
-      "width": 1024,
-      "height": 1536,
-      "bytes": 1761098,
+      "width": 640,
+      "height": 960,
+      "bytes": 86926,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "piece-portrait",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; preserve original and prepare web derivatives in a later milestone."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; original preserved; opaque background retained in web derivative.",
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "sourceBytes": 1761098,
+      "sourceSha256": "7fc18cecf451fe05fc5a50a41a429e8a5bf9dbea05a192bb780d9cfdccf50dab",
+      "src": "/assets/pieces/south-african-advisor.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "piece-female-peasant",
       "source": "Pieces_Asset/Female_peasant.png",
-      "width": 1024,
-      "height": 1536,
-      "bytes": 1863847,
+      "width": 640,
+      "height": 960,
+      "bytes": 81496,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "piece-portrait",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; preserve original and prepare web derivatives in a later milestone."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; original preserved; opaque background retained in web derivative.",
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "sourceBytes": 1863847,
+      "sourceSha256": "3bedfeef119072cdf0742a27bc2c404aa3885d49421a91384fb343d99d7643be",
+      "src": "/assets/pieces/female-peasant.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "piece-east-african-high-chief",
       "source": "Pieces_Asset/Highchief.png",
-      "width": 1024,
-      "height": 1536,
-      "bytes": 1690452,
+      "width": 640,
+      "height": 960,
+      "bytes": 76744,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "piece-portrait",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; preserve original and prepare web derivatives in a later milestone."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; original preserved; opaque background retained in web derivative.",
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "sourceBytes": 1690452,
+      "sourceSha256": "598a703367706dfba3c783f6af95163c278a641caf1da131fd664ac3c3bec1c4",
+      "src": "/assets/pieces/east-african-high-chief.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "piece-imperion",
       "source": "Pieces_Asset/Imperion.png",
-      "width": 1024,
-      "height": 1536,
-      "bytes": 2078181,
+      "width": 640,
+      "height": 960,
+      "bytes": 101338,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "piece-portrait",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; preserve original and prepare web derivatives in a later milestone."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; original preserved; opaque background retained in web derivative.",
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "sourceBytes": 2078181,
+      "sourceSha256": "626d450561f615aaf5e5efced465c0d09177700929d574cd75533bbf1f72d442",
+      "src": "/assets/pieces/imperion.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "piece-west-african-mystic",
       "source": "Pieces_Asset/Mystic.png",
-      "width": 1024,
-      "height": 1536,
-      "bytes": 2022835,
+      "width": 640,
+      "height": 960,
+      "bytes": 109204,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "piece-portrait",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; preserve original and prepare web derivatives in a later milestone."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; original preserved; opaque background retained in web derivative.",
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "sourceBytes": 2022835,
+      "sourceSha256": "58be70f29b9b54b88565a450e6244495e6604795a0427a56956b7c74e8e4dbd1",
+      "src": "/assets/pieces/west-african-mystic.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "piece-queen",
       "source": "Pieces_Asset/Queen.png",
-      "width": 1024,
-      "height": 1536,
-      "bytes": 1699881,
+      "width": 640,
+      "height": 960,
+      "bytes": 77752,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "piece-portrait",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; preserve original and prepare web derivatives in a later milestone."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; original preserved; opaque background retained in web derivative.",
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "sourceBytes": 1699881,
+      "sourceSha256": "bb878f54570c97600bf7f73f172b04d2e8167cf56ee5ac8ece4cb2faa679c551",
+      "src": "/assets/pieces/queen.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "piece-north-central-war-chief",
       "source": "Pieces_Asset/Warrior.png",
-      "width": 1024,
-      "height": 1536,
-      "bytes": 1966446,
+      "width": 640,
+      "height": 960,
+      "bytes": 94834,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "piece-portrait",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; preserve original and prepare web derivatives in a later milestone."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; original preserved; opaque background retained in web derivative.",
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "sourceBytes": 1966446,
+      "sourceSha256": "18c84f630cf2fb40ad6c49385df715a9623ee50423d3172b19a69f4427ad0766",
+      "src": "/assets/pieces/north-central-war-chief.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     },
     {
       "id": "piece-male-peasant",
       "source": "Pieces_Asset/male_peasant.png",
-      "width": 1024,
-      "height": 1536,
-      "bytes": 1736147,
+      "width": 640,
+      "height": 960,
+      "bytes": 70660,
       "transparent": false,
       "status": "temporary",
       "rights": "uncleared",
       "role": "piece-portrait",
-      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; preserve original and prepare web derivatives in a later milestone."
+      "notes": "Temporary development asset. Usage rights must be confirmed before production. Opaque white background; original preserved; opaque background retained in web derivative.",
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "sourceBytes": 1736147,
+      "sourceSha256": "5435916272d207a61430f182266e770f30ae9b75fc32516cb6510fd28f259455",
+      "src": "/assets/pieces/male-peasant.webp",
+      "derivative": {
+        "operation": "Aspect-preserving resize and WebP encoding only; no cropping, retouching, watermark removal or background removal.",
+        "quality": 86
+      }
     }
   ]
 }

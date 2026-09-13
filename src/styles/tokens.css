@@ -14,6 +14,8 @@
   --surface-primary: #11100d;
   --surface-raised: #171612;
   --surface-card: #1d1b16;
+  --surface-gallery: #ffffff;
+  --surface-portrait: #000000;
   --text-light: #f5f0e6;
   --text-dark: #11100d;
   --text-muted-dark: rgb(245 240 230 / 68%);
@@ -61,6 +63,8 @@
   --motion-cinematic: 1000ms;
   --motion-ease: ease-out;
   --shadow-raised: 0 16px 50px rgb(0 0 0 / 35%);
+  --texture-opacity: 0.055;
+  --hero-art-width: 34.625rem;
   --focus-color: var(--color-nubian-gold);
   --link-color: var(--color-nubian-gold);
 }

@@ -17,3 +17,10 @@ export function ButtonLink({ variant = "primary", className, ...props }:
   ComponentProps<typeof Link> & Styling) {
   return <Link className={classes(variant, className)} {...props} />;
 }
+
+// Native fragment navigation transfers keyboard focus to a focusable section
+// without a client component or route transition.
+export function ButtonAnchor({ variant = "primary", className, ...props }:
+  ComponentProps<"a"> & Styling & { href: `#${string}` }) {
+  return <a className={classes(variant, className)} {...props} />;
+}
