@@ -1,6 +1,6 @@
 # NUBIA: African Chess
 
-Milestones 1 and 2 are implemented: the shared foundation and the homepage only. Learn, Explore, Pieces and Shop routes remain unimplemented and hidden from navigation.
+Milestones 1–7 are implemented. The shared frontend now includes Home, Learn, Explore, Pieces, Shop, Cart, and a frontend-only Checkout prototype. Commerce remains explicitly non-operational: no payment provider, backend, orders, inventory, authentication, or production commercial content is connected.
 
 ## Run locally
 
@@ -63,15 +63,9 @@ npm run check:production
 
 This intentionally exits unsuccessfully until all manifest assets have approved status and cleared rights, and all provisional brand marks are replaced/approved. It flags the whole registered library, not just currently rendered images. Remove unused reference records or clear them before release. It does not equate a successful Next.js build with production readiness. Keep this gate in the future release process. The foundation also sets `noindex`; review this explicitly when real pages are ready.
 
-## Subsequent milestones
+## Current scope boundaries
 
-3. Learn to Play, using manual-backed instructions.
-4. Explore, using verified board information only; flag remaining mapping work.
-5. All eight piece profiles with manual-backed rules.
-6. Informational Shop; no purchase controls or invented product facts.
-7. Cross-page accessibility, responsiveness, asset and content verification.
-
-About, policies, account, search, cart, checkout, reviews, accessories, newsletter, tutorial video, gift functionality and all operational commerce remain out of scope. Do not add fabricated business history, contacts, prices, currency, editions, stock, specifications, shipping promises or policies.
+About, policies, account, search, reviews, newsletter, tutorial video, gift functionality, and all operational commerce remain out of scope. Cart and Checkout exist only to exercise local frontend state and validation. Do not add fabricated business history, contacts, stock, specifications, shipping promises, policies, customer feedback, or operational claims.
 
 ## Milestone 1 verification
 

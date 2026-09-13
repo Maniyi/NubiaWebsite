@@ -13,6 +13,15 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
   const header = useRef<HTMLElement>(null);
+  const navigation = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const focusNavigation = window.requestAnimationFrame(() => {
+      navigation.current?.querySelector<HTMLAnchorElement>("a")?.focus();
+    });
+    return () => window.cancelAnimationFrame(focusNavigation);
+  }, [open]);
 
   useEffect(() => {
     if (!open) return;
@@ -54,7 +63,7 @@ export function SiteHeader() {
     }}>
       <Container className="site-header__inner">
         <Brand />
-        <nav id="primary-navigation" className="primary-navigation" data-open={open} aria-label="Primary">
+        <nav ref={navigation} id="primary-navigation" className="primary-navigation" data-open={open} aria-label="Primary">
           <ul>
             {activeNavigation.map((item) => (
               <li key={item.href}>

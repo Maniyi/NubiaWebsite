@@ -55,7 +55,7 @@ export const home = {
     title: "Every empire begins\nwith understanding.",
     description: "Discover the objective, explore the five regions, and get to know the pieces that inhabit them.",
     action: { label: "Discover the Objective", href: "#objective" },
-    futureNote: "Dedicated learning pages and a product showcase will follow. For now, discover NUBIA here.",
+    futureNote: "Continue with the dedicated learning guides, board explorer, piece profiles, and prototype product showcase.",
   },
 } as const;
 

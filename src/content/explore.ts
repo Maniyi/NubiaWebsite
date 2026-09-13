@@ -119,6 +119,6 @@ export const explore = {
     title: "Understand the board.\nCommand your empire.",
     description: "Return to the complete beginner’s guide for the objective, turn rhythm, movement categories, and victory condition.",
     action: { label: "Learn how to play", href: "/learn" },
-    note: "A detailed guide to every NUBIA piece will follow in a later milestone.",
+    note: "The Pieces guide documents movement, capture, and special abilities for every NUBIA piece.",
   },
 } as const;

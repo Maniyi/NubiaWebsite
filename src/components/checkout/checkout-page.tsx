@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/layout";
@@ -38,6 +38,16 @@ export function CheckoutPage() {
   const [shipping, setShipping] = useState(emptyShipping);
   const [informationErrors, setInformationErrors] = useState<InformationErrors>({});
   const [shippingErrors, setShippingErrors] = useState<ShippingErrors>({});
+  const stepHeading = useRef<HTMLHeadingElement>(null);
+  const initialStep = useRef(true);
+
+  useEffect(() => {
+    if (initialStep.current) {
+      initialStep.current = false;
+      return;
+    }
+    stepHeading.current?.focus();
+  }, [step]);
 
   function submitInformation(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -48,7 +58,11 @@ export function CheckoutPage() {
     if (!information.lastName.trim()) errors.lastName = "Enter your last name.";
     if (!information.phone.trim()) errors.phone = "Enter your phone number.";
     setInformationErrors(errors);
-    if (Object.keys(errors).length === 0) setStep(3);
+    const firstError = Object.keys(errors)[0] as keyof Information | undefined;
+    if (firstError) {
+      const field = event.currentTarget.elements.namedItem(firstError);
+      if (field instanceof HTMLElement) field.focus();
+    } else setStep(3);
   }
 
   function submitShipping(event: FormEvent<HTMLFormElement>) {
@@ -60,7 +74,11 @@ export function CheckoutPage() {
     if (!shipping.postalCode.trim()) errors.postalCode = "Enter a postal code.";
     if (!shipping.country.trim()) errors.country = "Enter a country.";
     setShippingErrors(errors);
-    if (Object.keys(errors).length === 0) setStep(4);
+    const firstError = Object.keys(errors)[0] as keyof Shipping | undefined;
+    if (firstError) {
+      const field = event.currentTarget.elements.namedItem(firstError);
+      if (field instanceof HTMLElement) field.focus();
+    } else setStep(4);
   }
 
   if (!hydrated) {
@@ -86,7 +104,7 @@ export function CheckoutPage() {
           <section className="checkout-workspace" aria-live="polite">
             {step === 2 && (
               <form noValidate onSubmit={submitInformation} aria-labelledby="information-title">
-                <div className="checkout-step-heading"><p className="eyebrow">Step 1 of 4</p><h1 id="information-title">Information</h1><p>Used only in this page session. Nothing is sent or saved to local storage.</p></div>
+                <div className="checkout-step-heading"><p className="eyebrow">Step 1 of 4</p><h1 ref={stepHeading} tabIndex={-1} id="information-title">Information</h1><p>Used only in this page session. Nothing is sent or saved to local storage.</p></div>
                 <div className="checkout-fields">
                   <div className="form-field form-field--full"><label htmlFor="email">Email address</label><input id="email" name="email" type="email" autoComplete="email" required value={information.email} onChange={(event) => setInformation({ ...information, email: event.target.value })} aria-invalid={Boolean(informationErrors.email)} aria-describedby={informationErrors.email ? "email-error" : undefined} />{informationErrors.email && <p id="email-error" className="form-error">{informationErrors.email}</p>}</div>
                   <div className="form-field"><label htmlFor="first-name">First name</label><input id="first-name" name="firstName" type="text" autoComplete="given-name" required value={information.firstName} onChange={(event) => setInformation({ ...information, firstName: event.target.value })} aria-invalid={Boolean(informationErrors.firstName)} aria-describedby={informationErrors.firstName ? "first-name-error" : undefined} />{informationErrors.firstName && <p id="first-name-error" className="form-error">{informationErrors.firstName}</p>}</div>
@@ -99,7 +117,7 @@ export function CheckoutPage() {
 
             {step === 3 && (
               <form noValidate onSubmit={submitShipping} aria-labelledby="shipping-title">
-                <div className="checkout-step-heading"><p className="eyebrow">Step 2 of 4</p><h1 id="shipping-title">Shipping</h1><p>Prototype address validation only. No shipping destinations or rates are confirmed.</p></div>
+                <div className="checkout-step-heading"><p className="eyebrow">Step 2 of 4</p><h1 ref={stepHeading} tabIndex={-1} id="shipping-title">Shipping</h1><p>Prototype address validation only. No shipping destinations or rates are confirmed.</p></div>
                 <div className="checkout-fields">
                   <div className="form-field form-field--full"><label htmlFor="address">Address</label><input id="address" name="address" type="text" autoComplete="street-address" required value={shipping.address} onChange={(event) => setShipping({ ...shipping, address: event.target.value })} aria-invalid={Boolean(shippingErrors.address)} aria-describedby={shippingErrors.address ? "address-error" : undefined} />{shippingErrors.address && <p id="address-error" className="form-error">{shippingErrors.address}</p>}</div>
                   <div className="form-field form-field--full"><label htmlFor="apartment">Apartment or additional address <span>(optional)</span></label><input id="apartment" name="apartment" type="text" autoComplete="address-line2" value={shipping.apartment} onChange={(event) => setShipping({ ...shipping, apartment: event.target.value })} /></div>
@@ -114,7 +132,7 @@ export function CheckoutPage() {
 
             {step === 4 && (
               <section className="payment-placeholder" aria-labelledby="payment-title">
-                <p className="eyebrow">Step 3 of 4</p><h1 id="payment-title">Payment Provider Integration</h1>
+                <p className="eyebrow">Step 3 of 4</p><h1 ref={stepHeading} tabIndex={-1} id="payment-title">Payment Provider Integration</h1>
                 <div className="payment-placeholder__panel"><span aria-hidden="true">◇</span><p>Secure payment fields will be supplied by the selected payment provider after commerce requirements are approved.</p></div>
                 <p className="payment-placeholder__explanation">This prototype does not collect card numbers, security codes, bank credentials, payment authorization, or identity documents. No transaction can be completed.</p>
                 <div className="checkout-actions checkout-actions--payment"><button type="button" className="checkout-back" onClick={() => setStep(3)}>← Back to shipping</button><Button type="button" disabled>Place Order Unavailable</Button></div>
@@ -124,7 +142,7 @@ export function CheckoutPage() {
 
             {step === 5 && (
               <section className="confirmation-placeholder" aria-labelledby="confirmation-title">
-                <span aria-hidden="true">◇</span><p className="eyebrow">Step 4 of 4</p><h1 id="confirmation-title">Confirmation Placeholder</h1><p className="confirmation-placeholder__lead">No order has been placed.</p><p>A real confirmation will only be available after payment, order processing and customer communication services are approved and connected.</p>
+                <span aria-hidden="true">◇</span><p className="eyebrow">Step 4 of 4</p><h1 ref={stepHeading} tabIndex={-1} id="confirmation-title">Confirmation Placeholder</h1><p className="confirmation-placeholder__lead">No order has been placed.</p><p>A real confirmation will only be available after payment, order processing and customer communication services are approved and connected.</p>
                 <div className="checkout-actions"><button type="button" className="checkout-back" onClick={() => setStep(4)}>← Back to payment</button><ButtonLink href="/shop">Return to Shop</ButtonLink></div>
               </section>
             )}

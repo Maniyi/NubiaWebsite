@@ -12,7 +12,7 @@ export function PieceSelector({ selectedId }: { selectedId: string }) {
           const selected = piece.id === selectedId;
           return <li key={piece.id}>
             <Link href={`/pieces?piece=${piece.id}#featured-piece`} aria-current={selected ? "location" : undefined}>
-              <span className="piece-selector__portrait"><AssetImage assetId={piece.assetId} alt="" sizes="72px" loading={selected ? "eager" : undefined} /></span>
+              <span className="piece-selector__portrait"><AssetImage assetId={piece.assetId} alt="" sizes="72px" /></span>
               <span><strong>{piece.name}</strong><small>{piece.role}</small></span>
             </Link>
           </li>;

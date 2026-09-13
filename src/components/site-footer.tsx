@@ -21,7 +21,7 @@ export function SiteFooter() {
           <p className="eyebrow">Navigate</p>
           <nav aria-label="Footer">
             <ul>{activeNavigation.map((item) => (
-              <li key={item.href}><Link href={item.href}>{item.label}</Link></li>
+              <li key={item.href}><Link href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link></li>
             ))}</ul>
           </nav>
         </div>

@@ -20,7 +20,7 @@ export function FeaturedPiece({ piece }: { piece: PieceProfile }) {
         <div className="featured-profile__layout">
           <div className="featured-profile__portrait">
             <span className="featured-profile__index" aria-hidden="true">{String(pieceProfilesIndex(piece.id) + 1).padStart(2, "0")}</span>
-            <AssetImage assetId={piece.assetId} alt={piece.alt} sizes="(min-width: 1024px) 380px, (min-width: 640px) 46vw, calc(100vw - 64px)" loading="eager" />
+            <AssetImage assetId={piece.assetId} alt={piece.alt} sizes="(min-width: 1024px) 380px, (min-width: 640px) 46vw, calc(100vw - 64px)" />
           </div>
           <div className="featured-profile__story">
             <p className="featured-profile__role">{piece.role}</p>

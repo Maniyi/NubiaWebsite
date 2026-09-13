@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useRef, useState, type ReactNode 
 import { CartDrawer } from "./cart-drawer";
 
 const CART_STORAGE_KEY = "nubia-storefront-cart-v1";
+const MAXIMUM_CART_QUANTITY = 10;
 
 export type CartLine = {
   productId: string;
@@ -53,10 +54,19 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const stored = window.localStorage.getItem(CART_STORAGE_KEY);
       if (stored) {
         const parsed: unknown = JSON.parse(stored);
-        if (Array.isArray(parsed)) restored = parsed.filter(isCartLine);
+        if (Array.isArray(parsed)) {
+          restored = parsed.filter(isCartLine).map((line) => ({
+            ...line,
+            quantity: Math.min(MAXIMUM_CART_QUANTITY, line.quantity),
+          }));
+        }
       }
     } catch {
-      window.localStorage.removeItem(CART_STORAGE_KEY);
+      try {
+        window.localStorage.removeItem(CART_STORAGE_KEY);
+      } catch {
+        // Storage can be unavailable entirely; continue with an in-memory cart.
+      }
     }
     const restoreCart = window.setTimeout(() => {
       setLines(restored);
@@ -67,21 +77,25 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (!hydrated) return;
-    window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(lines));
+    try {
+      window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(lines));
+    } catch {
+      // The in-memory cart remains usable when storage is unavailable or full.
+    }
   }, [hydrated, lines]);
 
   function addItem(item: CartLine) {
     setLines((current) => {
       const match = current.find((line) => line.productId === item.productId && line.editionId === item.editionId);
       if (!match) return [...current, item];
-      return current.map((line) => line === match ? { ...line, quantity: Math.min(10, line.quantity + item.quantity) } : line);
+      return current.map((line) => line === match ? { ...line, quantity: Math.min(MAXIMUM_CART_QUANTITY, line.quantity + item.quantity) } : line);
     });
     setAnnouncement(`${item.quantity} ${item.editionLabel} ${item.productName} added to the prototype cart.`);
   }
 
   function setItem(item: CartLine) {
     setLines((current) => {
-      const quantity = Math.min(10, Math.max(1, item.quantity));
+      const quantity = Math.min(MAXIMUM_CART_QUANTITY, Math.max(1, item.quantity));
       const matchIndex = current.findIndex((line) => line.productId === item.productId && line.editionId === item.editionId);
       if (matchIndex === -1) return [...current, { ...item, quantity }];
       return current.map((line, index) => index === matchIndex ? { ...item, quantity } : line);
@@ -90,7 +104,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }
 
   function updateQuantity(productId: string, editionId: string, quantity: number) {
-    const safeQuantity = Math.min(10, Math.max(1, quantity));
+    const safeQuantity = Math.min(MAXIMUM_CART_QUANTITY, Math.max(1, quantity));
     setLines((current) => current.map((line) =>
       line.productId === productId && line.editionId === editionId
         ? { ...line, quantity: safeQuantity }
