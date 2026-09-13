@@ -107,6 +107,16 @@ nav a:hover { color: var(--color-nubian-gold); }
 .button--primary { background: var(--color-nubian-gold); color: var(--text-dark); border-color: var(--color-nubian-gold); }
 .button--secondary { background: transparent; color: var(--link-color); border-color: var(--link-color); }
 .button--text { background: transparent; color: var(--link-color); text-decoration: underline; }
+.visual-placeholder { position: relative; isolation: isolate; display: grid; place-items: center; min-width: 0; overflow: hidden; border: 1px solid var(--border-strong); }
+.visual-placeholder__grid { position: absolute; inset: 0; z-index: -1; opacity: 0.36; background-image: linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px); background-size: var(--space-12) var(--space-12); mask-image: linear-gradient(145deg, black, transparent 78%); }
+.visual-placeholder__copy { display: flex; flex-direction: column; gap: var(--space-2); max-width: 29rem; padding: var(--space-6); text-align: center; }
+.visual-placeholder__copy > span:last-child { font-family: var(--font-display); font-size: var(--text-h4); line-height: 1.35; }
+.visual-placeholder__label { color: var(--color-nubian-gold); font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+.visual-placeholder--charcoal { background: linear-gradient(135deg, #0b0b09, #202016); color: var(--text-light); }
+.visual-placeholder--parchment { background: linear-gradient(135deg, #e6dbc4, #c9b78f); color: var(--text-dark); --border-strong: rgb(104 75 50 / 55%); }
+.visual-placeholder--parchment .visual-placeholder__label { color: var(--color-earth); }
+.visual-placeholder--land { background: var(--color-land); color: var(--text-light); }
+.visual-placeholder--sea { background: var(--color-sea); color: var(--text-light); }
 @media (hover: hover) {
   .button--primary:not(:disabled):hover { background: var(--color-desert-sand); transform: translateY(-1px); }
   .button--secondary:not(:disabled):hover { background: var(--border-subtle); }
@@ -123,4 +133,6 @@ nav a:hover { color: var(--color-nubian-gold); }
 @media (forced-colors: active) {
   .button, .menu-toggle { border-color: ButtonText; }
   .primary-navigation a[aria-current="page"] { border-bottom-color: LinkText; }
+  .visual-placeholder { border-color: CanvasText; background: Canvas; color: CanvasText; }
+  .visual-placeholder__label { color: CanvasText; }
 }
